@@ -1,0 +1,32 @@
+
+<header class="intro-header" style="background-image: url('<%- cover %>')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <% if (is_post()) { %>
+                    <div class="post-heading">
+                            <h1><%- page.title || theme.default_post_title || "Untitled" %></h1>
+                            <% if (page.subtitle && page.subtitle.length) { %>
+                            <h2 class="post-subheading">
+                                <%- page.subtitle %>
+                            </h2>
+                            <% } %>
+                            <span class="meta">
+                                <!-- Date and Author -->
+                                <% if(page.author) { %>
+                                    Posted by <%- page.author %> on
+                                <% } %>
+                                <% if(page.date) { %>
+                                    <%= page.date.format(config.date_format) %>
+                                <% } %>
+                            </span>
+                        </div>
+                <% } else { %>
+                    <div class="site-heading">
+                        <h1><%= title %></h1>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</header>

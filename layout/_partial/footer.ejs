@@ -1,0 +1,87 @@
+<hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <% if (site.data.contact.twitter ) { %>
+                        <li>
+                            <a href="<%- site.data.contact.twitter %>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    <% if (site.data.contact.facebook ) { %>
+                        <li>
+                            <a href="<%- site.data.contact.facebook %>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    <% if (site.data.contact.github ) { %>
+                        <li>
+                            <a href="<%- site.data.contact.github %>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    <% if (site.data.contact.linkedin ) { %>
+                        <li>
+                            <a href="<%- site.data.contact.linkedin %>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    <% if (site.data.contact.mailto) { %>
+                        <li>
+                            <a href="mailto:<%- site.data.contact.mailto %>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    <% } %>
+
+                    <% if (site.data.contact.gitlab ) { %>
+                        <li>
+                            <a href="<%- site.data.contact.gitlab %>" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+
+                <p class="copyright text-muted">
+                    &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+                    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> ⌘ 
+                    Theme from <a href="https://github.com/brightonzhang/hexo-theme-nutshell" target="_blank">Nutshell</a>
+                    <% if (config.deploy.branch == 'gh-pages') { %>
+                    ⌘ Deployed on <a href="<%- config.deploy.repository %>" target="_blank">GitHub Pages</a>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

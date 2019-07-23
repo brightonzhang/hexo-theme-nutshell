@@ -1,0 +1,47 @@
+
+.post-preview
+  > a
+    color gray-dark
+    &:hover, &:focus
+      text-decoration none
+      color brand-primary
+    > .post-title
+      font-size 30px
+      margin-top 30px
+      margin-bottom 10px
+      &.archive
+        font-size 22px
+    > .post-subtitle
+      margin 0
+      font-weight 300
+      margin-bottom 10px
+  > .post-meta
+    color gray
+    font-size 18px
+    font-style italic
+    margin-top 0
+    &.archive
+      font-size 16px
+    > a
+      text-decoration none
+      color gray-dark
+      &:hover, &:focus
+        color brand-primary
+        text-decoration underline
+  @media only screen and (min-width: 768px)
+    > a
+      > .post-title
+        font-size 36px
+
+.post-tags, .post-categories
+  font-size 15px
+  margin-top 30px
+  margin-bottom 30px
+  a
+    border-bottom 1px dotted #ABABAB
+    text-transform uppercase
+    margin-right 10px
+    &:hover, &:visited, &:active
+      text-decoration none
+      border-bottom none
+

@@ -1,0 +1,12 @@
+<article>
+
+    <div class="post-preview">
+        <a href="<%- url_for(post.path) %>">
+            <h1 class="post-title archive">
+                <%= date(post.date, 'MM/DD') %>: 
+                <%- post.title || "Untitled" %>
+            </h1>
+        </a>
+    </div>
+
+</article>

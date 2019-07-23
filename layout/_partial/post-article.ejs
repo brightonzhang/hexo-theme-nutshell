@@ -1,0 +1,33 @@
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           <% if (post.categories && post.categories.length || post.tags && post.tags.length) { %>
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    <%- partial('post/tag', {post: post}) %>
+
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    <% if (post.tags && post.tags.length && post.categories && post.categories.length){ %>
+                        <%- partial('post/category', {post: post}) %>
+                    <% } %>
+                </div>
+            <% } %>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <%- post.content %>
+            </div>
+
+            <!-- Comments -->
+            <% if (post.comment != false) { %>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <%- partial("_partial/comments") %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,16 @@
+<!-- Page Header -->
+<%- partial('_partial/header.ejs', {cover: site.data.cover.home, title: config.title}) %>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <% page.posts.each(function(item){ %>
+                <%- partial('_partial/index-article', {item: item}) %>
+            <% }); %>
+
+            <%- partial('_partial/paginator') %>
+        </div>
+    </div>
+</div>
+

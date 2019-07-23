@@ -1,0 +1,54 @@
+<%
+    var title = '';
+    var cover = '';
+    if (page.category) {
+        title = page.category;
+        cover = site.data.cover.category;
+    }
+
+    if (page.tag) {
+        title = "#" + page.tag;
+        cover = site.data.cover.tag;
+    }
+
+    if (page.archive) {
+        cover = site.data.cover.archive;
+
+        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+        else title = __('Archives');
+    }
+%>
+
+<%- partial('_partial/header.ejs', {cover: cover, title:title}) %>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <% var last; %>
+
+            <% page.posts.each(function(post){ %>
+                <% var year = post.date.year(); %>
+                <% if (last != year){ %>
+                    <% if (last != null){ %>
+                        </div></section>
+                    <% } %>
+                    <% last = year; %>
+                    <section class="archives-wrap">
+                        <div class="archive-year-wrap">
+                            <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+                        </div>
+                    <div class="archives">
+                <% } %>
+                <%- partial('_partial/archive-article', {post: post}) %>
+            <% }); %>
+
+            <% if (page.posts.length){ %>
+                </div></section>
+            <% } %>
+
+            <div class="archive-before-pagination"></div>
+            <%- partial('_partial/paginator') %>
+        </div>
+    </div>
+</div>
