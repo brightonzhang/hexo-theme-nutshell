@@ -1,0 +1,28 @@
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <% site.categories.forEach(function(category){ %>
+                <section class="category-wrap">
+                    <div class="category-name-wrap">
+                        <span class="fa fa-folder-open-o listing-seperator" id="<%= category.name %>">
+                            <a href="<%- url_for(category.path) %>" class="category-name"><%- category.name || "Untitled" %></a>
+                        </span>
+                    </div>
+                    <div class="category-posts">
+                        <% category.posts.every(function(post, i){ %>
+                            <% if (i >= 3) { %>
+                                <article><a href="<%- url_for(category.path) %>">...</a></article>
+                                <% return false; %>
+                            <% } %>
+                            <%- partial('_partial/tag-category-article', {post: post}) %>
+                            <% return true; %>
+                        <% }); %>
+                    </div>
+                </section>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+

@@ -1,17 +1,8 @@
-<% if (index){ %>
-    <a href="<%- url_for(post.path) %>">
-        <h2 class="post-title" itemprop="name">
-            <%- post.title || "Untitled" %>
-        </h2>
-        <% if (post.subtitle && post.subtitle.length) { %>
-            <h3 class="post-subtitle" itemprop="subname">
-                <%- post.subtitle %>
-            </h3>
-        <% } %>
-    </a>  
-<% } else { %>
-    <h1 class="post-title" itemprop="name">
-        <%= post.title || "Untitled"%>
-    </h1>
+<h1 class="post-title" itemprop="name">
+    <%- post.title || "Untitled" %>
+</h1>
+<% if (post.subtitle && post.subtitle.length) { %>
+    <h2 class="post-subtitle" itemprop="subname">
+        <%- post.subtitle %>
+    </h2>
 <% } %>
-

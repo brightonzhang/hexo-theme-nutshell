@@ -1,7 +1,15 @@
 <article>
     <div class="post-preview">
-        <%- partial('post/title', {post: item, index: true}) %>
-        <%- partial('post/excerpt', {post: item}) %>
+        <a href="<%- url_for(item.path) %>">
+            <%- partial('post/title', {post: item}) %>
+            <%- partial('post/excerpt', {post: item}) %>
+        </a>
+        <% if ( item.categories &&  item.categories.length ||  item.tags &&  item.tags.length) { %>
+            <div class="post-tag-category">
+                <%- partial('post/tag', {post: item}) %>
+                <%- partial('post/category', {post: item}) %>
+            </div>
+        <% } %>
         <%- partial('post/meta', {post: item}) %>
     </div>
 </article>

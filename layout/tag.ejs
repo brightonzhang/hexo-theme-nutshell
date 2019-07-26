@@ -1,0 +1,17 @@
+
+<%- partial('_partial/header.ejs', {cover: site.data.cover.tag, title:"#" + page.tag}) %>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <section class="tag-posts">
+                <% page.posts.each(function(post){ %>
+                    <%- partial('_partial/tag-category-article', {post: post}) %>
+                <% }); %>
+            </section>
+
+            <%- partial('_partial/paginator') %>
+        </div>
+    </div>
+</div>

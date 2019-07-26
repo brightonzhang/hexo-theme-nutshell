@@ -36,7 +36,9 @@
                     <% last = year; %>
                     <section class="archives-wrap">
                         <div class="archive-year-wrap">
-                            <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+                            <span class="fa fa-calendar listing-seperator" id="<%= year %>">
+                                <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+                            </span>
                         </div>
                     <div class="archives">
                 <% } %>

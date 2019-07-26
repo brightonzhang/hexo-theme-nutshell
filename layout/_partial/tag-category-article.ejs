@@ -1,0 +1,13 @@
+<article>
+    <div class="post-archive">
+        <a href="<%- url_for(post.path) %>">
+            <span class="post-title archive">
+                <%- post.title || "Untitled" %>
+            </span>
+        </a>
+        <span class="post-meta archive">
+            <%= date(post.date, config.date_format) %>
+        </span>
+    </div>
+</article>
+    

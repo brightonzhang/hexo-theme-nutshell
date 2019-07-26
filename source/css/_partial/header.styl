@@ -7,7 +7,7 @@
   @extend .background-cover
   margin-bottom 50px
   .site-heading, .post-heading, .page-heading
-    padding 100px 0 50px
+    padding 85px 0 55px
     color white
     @media only screen and (min-width: 768px)
       padding 150px 0
@@ -20,16 +20,23 @@
       margin-top 0
       font-size 50px
     .subheading
-      font-size 24px
+      @extend .sans-serif
+      font-size 18px
       line-height 1.1
       display block
-      @extend .sans-serif
       font-weight 300
       margin 10px 0 0
     @media only screen and (min-width: 768px)
       h1
         font-size 80px
   .post-heading
+    .post-tag-category
+      @extend .sans-serif
+      font-size 16px
+      font-weight 500
+      color white
+      a
+        color: white
     h1
       font-size 35px
     .subheading, .meta
@@ -37,18 +44,22 @@
       display block
     .subheading
       @extend .sans-serif
-      font-size 24px
+      font-size 17px
       margin 10px 0 30px
       font-weight 600
     .meta
       @extend .serif
       font-style italic
       font-weight 300
-      font-size 20px
+      font-size 15px
       a
         color white
     @media only screen and (min-width: 768px)
+      .post-tag-category
+        font-size 25px
       h1
         font-size 55px
       .subheading
         font-size 30px
+      .meta
+        font-size 20px

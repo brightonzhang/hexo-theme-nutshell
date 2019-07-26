@@ -1,10 +1,13 @@
+@import "_extend.styl"
 @import "variables.styl"
 @import "mixins.styl"
 
 body
   @extend .serif
-  font-size 20px
+  font-size 16px
+  line-height: 1.7
   color gray-dark
+  overflow-x: hidden
 
 p
   line-height 1.5
@@ -16,6 +19,7 @@ p, li
 
 h1, h2, h3, h4, h5, h6
   @extend .sans-serif
+  line-height: 1.1
   font-weight 800
 
 a
@@ -171,3 +175,4 @@ body
 @import "_partial/article.styl"
 @import "_partial/paginator.styl"
 @import "_partial/footer.styl"
+@import "_partial/archive.styl"

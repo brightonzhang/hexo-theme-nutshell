@@ -5,22 +5,26 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <% if (is_post()) { %>
                     <div class="post-heading">
-                            <h1><%- page.title || theme.default_post_title || "Untitled" %></h1>
-                            <% if (page.subtitle && page.subtitle.length) { %>
-                            <h2 class="post-subheading">
-                                <%- page.subtitle %>
-                            </h2>
-                            <% } %>
-                            <span class="meta">
-                                <!-- Date and Author -->
-                                <% if(page.author) { %>
-                                    Posted by <%- page.author %> on
-                                <% } %>
-                                <% if(page.date) { %>
-                                    <%= page.date.format(config.date_format) %>
-                                <% } %>
-                            </span>
-                        </div>
+                        <!-- Tags and categories -->
+                        <% if ( page.categories &&  page.categories.length ||  page.tags &&  page.tags.length) { %>
+                            <div class="post-tag-category">
+                                <%- partial('post/tag', {post: page}) %>
+                                <%- partial('post/category', {post: page}) %>
+                            </div>
+                        <% } %>
+
+                        <h1><%- page.title || theme.default_post_title || "Untitled" %></h1>
+                        <% if (page.subtitle && page.subtitle.length) { %>
+                        <h2 class="post-subheading">
+                            <%- page.subtitle %>
+                        </h2>
+                        <% } %>
+
+                        <span class="meta">
+                            <!-- Date and Author -->
+                            <%- partial('post/meta', {post: page}) %>
+                        </span>
+                    </div>
                 <% } else { %>
                     <div class="site-heading">
                         <h1><%= title %></h1>
