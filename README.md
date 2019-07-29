@@ -19,6 +19,7 @@ The theme is based on Hexo theme [Landscape](https://github.com/hexojs/hexo-them
 
 - [Bootstrap](http://getbootstrap.com/css/)
 - [jQuery](https://jquery.com/)
+- [TagCanvas](http://www.goat1000.com/tagcanvas.php)
 
 ## Installation
 

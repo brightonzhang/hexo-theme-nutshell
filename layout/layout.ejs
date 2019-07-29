@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html <% if(config.language) { %>lang="<%= config.language %>"<% } else { %>lang="en"<% }%>>
+<html <% if(config.language) { %>lang="<%= config.language %>"<% } else { %>lang="en"<% } %> >
 
 <!-- Head tag -->
 <%- partial('_partial/head') %>
 
-<body>
+<body <% if (is_post()) { %> data-spy="scroll" data-target="#tocScrollspy" <% } %> >
 
     <!-- Menu -->
     <%- partial('_partial/nav') %>
