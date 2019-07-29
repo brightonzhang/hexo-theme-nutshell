@@ -1,18 +1,20 @@
-<%
-    var isTagIndex = page.type === 'tags' || page.type === 'tag';
-    var isCategoryIndex = page.type === 'categories' || page.type === 'category';
-%>
-
-<% if (isTagIndex) { %>
+<% switch (page.type) {
+case 'tag' :
+case 'tags' : %>
     <%- partial('_partial/header', {cover: site.data.cover.tag, title: page.title}) %>
     <%- partial('_partial/tag-index') %>
-<% } else if (isCategoryIndex) { %>
+    <% break;
+
+case 'category' :
+case 'categories' : %>
     <%- partial('_partial/header', {cover: site.data.cover.category, title: page.title}) %>
     <%- partial('_partial/category-index') %>
-<% } else { %>
+    <% break;
+
+default : %>
     <%- partial('_partial/header', {cover: page.cover, title: page.title}) %>
     <%- partial('_partial/post-article', {post: page}) %>
-<% } %>
-
+    <% break;
+} %>
 
 
