@@ -2,7 +2,18 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <% site.categories.forEach(function(category){ %>
+            <%
+                var categories = [];
+                site.categories.each(function(category){ 
+                    categories.push({name: category.name, path:category.path, posts: category.posts.sort('-date')});
+                });
+
+                categories.sort(function(a,b){
+                    return a.name.localeCompare(b.name, config.language);
+                });
+            %>
+
+            <% categories.forEach(function(category){ %>
                 <section class="category-wrap">
                     <div class="category-name-wrap">
                         <span class="fa fa-folder-open-o listing-seperator" id="<%= category.name %>">
