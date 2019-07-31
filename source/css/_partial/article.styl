@@ -1,52 +1,52 @@
-article
-  .container
-    .row
-      // Responsive Images
-      img
-        max-width 100% !important
-        height auto
-        display inline-block
-      // Video Containers
-      .video-container
-        position relative
-        padding-bottom 56.25%
-        padding-top 30px
-        height 0
-        overflow hidden
-        iframe, object, embed
-          position absolute
-          top 0
-          left 0
-          width 100%
-          height 100%
-          margin-top 0
-      blockquote
-        font-style italic
-        font-family font-serif
-        font-size 0.8em
-        padding 0 30px 15px
-        footer
-          border-top none
-          font-size 0.8em
-          line-height 1
-          margin 20px 0 0
-          padding-top 0
-          cite
-            &:before
-              content '—'
-              color #ccc
-              padding 0 0.5em
+.post-article
+  // Responsive Images
+  img
+    max-width 100% !important
+    height auto
+    display inline-block
+  // Video Containers
+  .video-container
+    position relative
+    padding-bottom 56.25%
+    padding-top 30px
+    height 0
+    overflow hidden
+    iframe, object, embed
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      margin-top 0
+  blockquote
+    font-style italic
+    font-family font-serif
+    font-size 0.8em
+    padding 0 30px 15px
+    footer
+      border-top none
+      font-size 0.8em
+      line-height 1
+      margin 20px 0 0
+      padding-top 0
+      cite
+        &:before
+          content '—'
+          color #ccc
+          padding 0 0.5em
 
-      .pullquote
-        float right
-        border none
-        padding 0
-        margin 1em 0 0.5em 1.5em
-        text-align left
-        width 45%
-        font-size 1.5em
-        &.left
-          float left
+  .pullquote
+    float right
+    border none
+    padding 0
+    margin 1em 0 0.5em 1.5em
+    text-align left
+    width 45%
+    font-size 1.5em
+    &.left
+      float left
+  code
+    word-wrap:break-word
 
 figure.highlight
   background #eee
@@ -167,20 +167,3 @@ pre
     color #dc322f
 
 
-
-
-.article-comment-link
-  float: right
-  &:before
-    content: "\f075"
-    font-family: font-icon
-    padding-right: 8px
-
-.article-share-link
-  cursor: pointer
-  float: right
-  margin-left: 20px
-  &:before
-    content: "\f064"
-    font-family: font-icon
-    padding-right: 6px

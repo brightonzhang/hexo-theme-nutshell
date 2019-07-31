@@ -4,10 +4,6 @@
 
 <!-- Bootstrap -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
 <!-- Disqus Comments -->
 <% if (theme.comments && theme.comments.disqus_shortname){ %>
 <script type="text/javascript">
@@ -23,7 +19,10 @@
 </script>
 <% } %>
 
-
 <%if (is_current('tags/index.html')){ %>
     <%- partial('tagcanvas') %>
+<% } %>
+
+<% if (is_post()) { %>
+    <%- partial('fancybox') %>
 <% } %>
