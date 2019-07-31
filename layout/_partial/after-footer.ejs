@@ -20,9 +20,11 @@
 <% } %>
 
 <%if (is_current('tags/index.html')){ %>
-    <%- partial('tagcanvas') %>
+    <%- js('/js/jquery.tagcanvas.min.js') %>
 <% } %>
 
 <% if (is_post()) { %>
-    <%- partial('fancybox') %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <% } %>
+
+<%- js('/js/script.js') %>
