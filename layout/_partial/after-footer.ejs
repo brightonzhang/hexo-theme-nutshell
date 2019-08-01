@@ -1,9 +1,17 @@
 
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<%- js('//cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js') %>
+<%- js('//cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js') %>
 
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<% if (is_post()) { %>
+    <%- js('//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js') %>
+<% } %>
+
+<%if (is_current('tags/index.html')){ %>
+    <%- js('/js/jquery.tagcanvas.min.js') %>
+<% } %>
+
+<%- js('/js/script.min.js') %>
+
 <!-- Disqus Comments -->
 <% if (theme.comments && theme.comments.disqus_shortname){ %>
 <script type="text/javascript">
@@ -19,12 +27,6 @@
 </script>
 <% } %>
 
-<%if (is_current('tags/index.html')){ %>
-    <%- js('/js/jquery.tagcanvas.min.js') %>
-<% } %>
 
-<% if (is_post()) { %>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-<% } %>
 
-<%- js('/js/script.js') %>
+
