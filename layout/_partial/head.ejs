@@ -7,18 +7,32 @@
 
     <!-- Title -->
     <%
-    var title = [];
-    if (page.title) title.push(page.title);
-    if (page.category) title.push(page.category);
-    if (page.tag) title.push(page.tag);
-    if (page.archive) {
-        if (page.year) title.push(__('Archives: %s', page.year + (page.month ? '/' + page.month : '')));
-        else title.push(__('Archives'));
-    }
-    title.push(config.title);
+        var title = [];
+        if (page.title) title.push(page.title);
+        if (page.category) title.push(page.category);
+        if (page.tag) title.push(page.tag);
+        if (page.archive) {
+            if (page.year) title.push(__('Archives: %s', page.year + (page.month ? '/' + page.month : '')));
+            else title.push(__('Archives'));
+        }
+        title.push(config.title);
     %>
     <title><%= title.join(' - ') %></title>
 
+    <!-- open graph -->
+    <%
+        var image = '';
+        if (page.share_cover) {
+            image = page.share_cover;
+        } else if (page.cover) {
+            image = page.cover;
+        }else if (site.data.cover.home) {
+            image = site.data.cover.home;
+        }
+    %>
+    <%- open_graph({image:image}) %>
+
+    <!-- CSS -->
     <%- css('//cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css') %>
     <%- css('//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css') %>
     <% if (is_post()) { %>
