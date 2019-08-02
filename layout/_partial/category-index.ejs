@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <% site.categories.sort('-length').each(function(category){ %>
+            <% site.categories.sort('name').sort('-length').each(function(category){ %>
                 <section class="category-wrap">
                     <div class="category-name-wrap">
                         <span class="fa fa-folder-open-o listing-seperator" id="<%= category.name %>">

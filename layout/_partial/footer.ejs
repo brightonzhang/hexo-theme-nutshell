@@ -8,7 +8,7 @@
                 <ul class="list-inline text-center">
                     <% if (site.data.contact.twitter ) { %>
                         <li>
-                            <a href="<%- site.data.contact.twitter %>" target="_blank">
+                            <a href="<%- site.data.contact.twitter %>" target="_blank" rel="external nofollow">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -19,7 +19,7 @@
 
                     <% if (site.data.contact.facebook ) { %>
                         <li>
-                            <a href="<%- site.data.contact.facebook %>" target="_blank">
+                            <a href="<%- site.data.contact.facebook %>" target="_blank" rel="external nofollow">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -30,7 +30,7 @@
 
                     <% if (site.data.contact.github ) { %>
                         <li>
-                            <a href="<%- site.data.contact.github %>" target="_blank">
+                            <a href="<%- site.data.contact.github %>" target="_blank" rel="external nofollow">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -41,7 +41,7 @@
 
                     <% if (site.data.contact.linkedin ) { %>
                         <li>
-                            <a href="<%- site.data.contact.linkedin %>" target="_blank">
+                            <a href="<%- site.data.contact.linkedin %>" target="_blank" rel="external nofollow">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -52,7 +52,7 @@
 
                     <% if (site.data.contact.mailto) { %>
                         <li>
-                            <a href="mailto:<%- site.data.contact.mailto %>" target="_blank">
+                            <a href="mailto:<%- site.data.contact.mailto %>" target="_blank" rel="external nofollow">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
@@ -63,7 +63,7 @@
 
                     <% if (site.data.contact.gitlab ) { %>
                         <li>
-                            <a href="<%- site.data.contact.gitlab %>" target="_blank">
+                            <a href="<%- site.data.contact.gitlab %>" target="_blank" rel="external nofollow">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
@@ -75,10 +75,10 @@
 
                 <p class="copyright text-muted">
                     &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-                    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> ⌘ 
-                    Theme from <a href="https://github.com/brightonzhang/hexo-theme-nutshell" target="_blank">Nutshell</a>
+                    Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a> ⌘ 
+                    Theme from <a href="https://github.com/brightonzhang/hexo-theme-nutshell" target="_blank" rel="external nofollow">Nutshell</a>
                     <% if (config.deploy.branch == 'gh-pages') { %>
-                    ⌘ Deployed on <a href="<%- config.deploy.repository %>" target="_blank">GitHub Pages</a>
+                    ⌘ Deployed on <a href="<%- config.deploy.repository %>" target="_blank" rel="external nofollow">GitHub Pages</a>
                     <% } %>
                 </p>
             </div>
