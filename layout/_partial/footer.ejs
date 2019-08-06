@@ -76,9 +76,19 @@
                     &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
                     Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow">Hexo</a> ⌘ 
                     Theme from <a href="https://github.com/brightonzhang/hexo-theme-nutshell" target="_blank" rel="external nofollow">Nutshell</a>
-                    <% if (config.deploy.branch == 'gh-pages') { %>
-                    ⌘ Deployed on <a href="<%- config.deploy.repository %>" target="_blank" rel="external nofollow">GitHub Pages</a>
+
+                    <% if (Array.isArray(config.deploy)) { %>
+                        <% config.deploy.some(function(deploy){ %>
+                            <% if (deploy.type == 'git' && deploy.branch == 'gh-pages') { %>
+                                ⌘ Deployed on <a href="<%- deploy.repository %>" target="_blank" rel="external nofollow">GitHub Pages</a>
+                                <% return true; %>
+                            <% } %>
+                            <% return false; %>
+                        <% }); %>
+                    <% } else if (config.deploy.branch == 'gh-pages') { %>
+                        ⌘ Deployed on <a href="<%- config.deploy.repository %>" target="_blank" rel="external nofollow">GitHub Pages</a>
                     <% } %>
+                    <br/>
                 </p>
             </div>
         </div>
