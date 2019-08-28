@@ -5,9 +5,8 @@
         by <%- post.author %> 
     <% } %>
 
-    on  <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, config.date_format) %></time>
-
-    <% if (! post.updated.isSame(post.date, 'day')){ %>
-        , last updated on <time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated"><%= date(post.updated, config.date_format) %></time>
+    on  <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, config.date_format) %></time> <%_ -%>
+    <%_ if (! post.updated.isSame(post.date, 'day')){ -%>
+        <%_ %>, last updated on <time datetime="<%= date_xml(post.updated) %>" itemprop="dateUpdated"><%= date(post.updated, config.date_format) %></time>
     <% } %>
 </p>
