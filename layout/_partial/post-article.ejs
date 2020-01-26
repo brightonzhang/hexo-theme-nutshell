@@ -23,9 +23,17 @@
 
     <div class="row">
         <!-- Comments -->
-        <% if (post.comment != false) { %>
+        <% if (post.comment != false) { %> 
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-comment">
                 <%- partial("_partial/comments") %>
+            </div>
+        <% } %>
+    </div>
+    
+    <div class="row">
+        <% if (post.donate != false) { %> 
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-comment">
+                <%- partial("_partial/donate") %>
             </div>
         <% } %>
     </div>
